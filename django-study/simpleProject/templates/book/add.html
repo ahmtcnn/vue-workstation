@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mt-5 justify-content-center">
+
+      <div class="col-md-5">
+        <div class="col-md-11 card">
+          <div class="card-body">
+    <form action="{% url 'book:add' %}" method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+            <div class="form-group">
+          <img height="128" class="img-responsive text-center mb-3"
+               :src="product.selectedImage == null ? '/src/assets/default.png' : product.selectedImage">
+          <input ref="file" type="file" style="display: none;" @change="onChange($event)" class="form-control">
+          <button class="btn btn-outline-secondary " type="button" @click="$refs.file.click()">Resim Seç</button>
+            </div>
+            <div class="form-group">
+              <label>Book Name</label>
+              <input type="text" name="name"  class="form-control" placeholder="book name..">
+            </div>
+            <div class="form-group">
+              <label>Author Name</label>
+              <input type="text" name="author" class="form-control" placeholder="author name..">
+            </div>
+            <div class="row">
+              <div class="form-group col-md-5">
+                    <label for="date">Date</label>
+                    <input class="form-control" type="date" value="2020-01-01" name="date" id="date" aria-describedby="dateHelp" style="max-width: 320px;">
+                    <small id="dateHelp" class="form-text text-muted">Enter the date of reading</small>
+              </div>
+              <div class="col-md-7">
+                  <label for="image" style="display: block;"class="ml-3">Rate</label>
+                <div class="custom-control custom-radio ml-2" style="display: inline;">
+                    <input type="radio" class="custom-control-input mr-2" name="rate" id="value1" value="1" >
+                    <label class="custom-control-label mr-1" for="value1">1</label>
+                </div>
+                <div class="custom-control custom-radio " style="display: inline;">
+                    <input type="radio" class="custom-control-input mr-2" name="rate" id="value2" value="2" >
+                    <label class="custom-control-label mr-1" for="value2">2</label>
+                </div>
+                <div class="custom-control custom-radio " style="display: inline;">
+                    <input type="radio" class="custom-control-input mr-2" name="rate" id="value3" value="3" >
+                    <label class="custom-control-label mr-1" for="value3">3</label>
+                </div>
+                <div class="custom-control custom-radio " style="display: inline;">
+                    <input type="radio" class="custom-control-input mr-2" name="rate" id="value4" value="4" >
+                    <label class="custom-control-label mr-1" for="value4">4</label>
+                </div>
+                <div class="custom-control custom-radio " style="display: inline;">
+                    <input type="radio" class="custom-control-input mr-2" name="rate" id="value5" value="5" >
+                    <label class="custom-control-label mr-1" for="value5">5</label>
+                </div>
+              </div>
+
+            </div>
+            <button class="btn btn-outline-info btn-block">Add!</button>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+
+{%  endblock %}

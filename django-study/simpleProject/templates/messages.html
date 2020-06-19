@@ -1,0 +1,17 @@
+    <div id="message" class="container ">
+        <div class="row justify-content-center" style="position:relative;">
+        {% if messages %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+
+    <script>
+        var message = document.getElementById("message")
+        setTimeout(function(){
+            message.style.display = "none"  
+        },5000)
+        
+    </script>

@@ -1,0 +1,53 @@
+img {
+    /* 1 em = 16px */
+    /* figure genişliği ne kadarsa image in genişliği de o kadar olsun (responsive aslında) */
+    width: 100%;
+}
+
+a {
+    color: black;
+}
+
+html {
+    font-size: 21px;
+    line-height: 1.4; /*font-size ın 1.5 katı*/
+}
+
+article{
+    /* senin max 700 piksel genişliğin var. Sağına ve soluna otomatik olarak boşluğu sen ayarla */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+figure{
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+}
+
+figcaption{
+    font-size: 16px;
+    margin-top: 1em;
+}
+h3{
+    font-weight: normal; /*h3 ler bold gelir normalde biz normale aldık*/
+
+}
+
+
+.gray {
+    color: gray;
+}
+
+.ff-sans{
+    font-family: sans-serif;
+}
+
+blockquote{
+    font-size: 1.5em;
+}
+h1, h2, h3 blockquote{
+    line-height: 1.2;
+}

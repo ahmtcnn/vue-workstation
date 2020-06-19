@@ -1,0 +1,50 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; */
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+/* position : static(default) - relative -  absolute - fixed
+position : top -right - bottom- left özelliklerini kullanmaya yarar
+relative : sadece kendisini etkiliyor ?
+absolute : hiç bir nesne bunu görmüyor. kendi kafasına göre
+absolute dediğmizde parent tanımıyor. direk sayfanın 0,0 noktasına göre konum alıyor left ve rigt için
+ama relative parent a bakıyor 
+absolute normalde kimseyi takmadan takılıyor ancak eğer parent i relative ise o relative e hapsolur
+fixed: olduğu konumda sabit kalıyor. Yani scrooll yaparken bile orda duruyo fixed bi şekilde navbar gibi diğerlerinin altında
+z-index : katman veriyor. Yani bildiğimiz z ekseni
+nesnelerin üstünde veya altında kalabiliyor.
+z-index sadece position verilen nesnelere verilebilir
+
+box-shadow : en az iki değer vercez
+box-shadow 20px 20px;
+px yerine em de verilebilir
+burada ilki horizontal ikincisi vertical
+yani ilki sağ taraf ikincisi alt taraf
+sola ve yukarisi için eksi değerler vermek lazım
+üçüncü değer ise blur  yani aslında bunla birlikte tam bir shadow oluyor
+blueun uzunluğu
+dördüncü değüer ise kaç pikselden sonra blur başlasın
+
+*/

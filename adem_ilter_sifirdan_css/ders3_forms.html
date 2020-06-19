@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ders3.css">
+</head>
+<body>
+    <form action="">
+        <!-- Label a tıklandığında inputa focusluyor. for verdiğimiz için -->
+        <!-- <label><input id="adi" type="text/"></label> Böyle kullanılınca da aynısı oluyor trick -->
+        <div>
+            <label for="adi">Adı </label>
+            <input id="adi" type="text" required/>
+        </div>
+        <div>
+            <label for="tel">Adı </label>
+            <input id="tel" type="text" required />
+        </div>
+        <div>
+            <label for="email">Email </label>
+            <input id="email" type="text" required/>
+        </div>
+        <div>
+            <label for="mesaj">Mesaj </label>
+            <textarea id="mesaj"  rows="3"></textarea>
+        </div>
+        <div>
+            <label for="şehir">Şehir </label>
+            <select id="mesaj">
+                <option value="">Istanbul</option>
+                <option value="">İzmir</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="renk">Sevdiğiniz Renk</label>
+            <!-- /* eğer inputların name i aynıysa birini seçebiliyoruz*/ -->
+            <input name="renk" type="radio" />Kırmızı
+            <input name="renk" type="radio" />Yeşil
+        </div>
+
+        <div class="buttons">
+            <button type="reset">Sıfırla</button> <!-- ilk yüklendiğindeki haline geri döndürür -->
+            <button type="submit">Gnder</button>
+        </div>
+
+
+    </form>
+</body>
+</html>

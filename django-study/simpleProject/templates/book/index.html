@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content  %}
+<style>
+.card{
+border-radius: 15px;
+margin-top: 20px;
+width: 150px;
+height: 220px;
+max-width: 175px;
+max-height: 220px;
+background-size: 100%;
+background-repeat: no-repeat;
+box-shadow: 0,0,10px;
+border: none;
+-webkit-column-break-inside: avoid;
+cursor: pointer;
+}
+.list-group{
+    display: none;
+}
+.book-name{
+    font-weight: 900;
+}
+.card:hover{
+
+-webkit-box-shadow: 10px 10px 28px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 28px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 28px 0px rgba(0,0,0,0.75);
+background-image: none !important;
+
+}
+.card:hover ul{
+list-style-type: none;
+display: block;
+}
+.btn{
+    min-width: 80px;
+    
+}
+
+@media (min-width: 356px) {
+    .card-columns {
+        column-count: 3;
+        display: "inline";
+        display: "inline-block";
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 3;
+        display: "inline-block";
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+        display: "inline-block";
+        -webkit-column-break-inside: avoid;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 5;
+        display: "inline-block";
+        -webkit-column-break-inside: avoid;
+        
+    }
+
+
+}
+</style>
+
+<div class="container mt-3">
+    <div class="card-columns">
+    {% for book in books %}
+        <div class="card" style="background-image: url({{book.photo.url}});">
+            <ul class="list-group text-center">
+                <li>
+                    <p class="book-name mt-3">{{book.name}}</p>
+                    <p>{{book.author}}</p>
+                    <p>{{book.date}}</p>
+                    <p>{{book.rate}}/5</p>
+                    <form action="{% url 'book:edit' book.id %}">
+                        <button class="btn btn-outline-primary waves-effect mt-0">Edit</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

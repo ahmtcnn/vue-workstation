@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bu bir js Eğitimi 1 saatlik</h2>
+        <p id = "p1">Bu da bir paragraf 1</p>
+        <button onclick="tikla()" style="width: 100px; height: 50px;">Tıkla</button>
+        <button onclick="this.innerHTML = 'degisti'" style="width: 100px; height: 50px;">Inner HTML</button>
+        <button onmouseover="mousehover()" onmouseout="mouseout()" onclick="tikla2(this)" style="width: 100px; height: 50px;">Tıkla2</button>
+
+
+        <hr>
+        <hr>
+
+        <form name="form1" action="" method="POST" onsubmit = "return check()">
+            <input type="text" name="isim">
+            <button type="submit">Gönder</button>
+
+        </form>
+    </div>
+
+    
+
+    <script>
+
+        function check(){
+            //name i form1 olanı aldık
+            var form = document.forms["form1"];
+            var deger = form["isim"].value;
+            if (deger != ""){
+                return true
+            }
+            else {
+                alert("olmadı doldur")
+                return false
+            }
+            return false
+        }
+
+
+        let array = ['Ahmet', 'Mehmet', 'İsmail'];
+        array.push('Farkli')
+        console.log(array)
+        console.log(array.length)
+
+        for(var i = 0; i < array.length; i++){
+            console.log(array[i])
+        }
+        console.log("With foreach")
+        array.forEach(function(deger){
+            console.log(deger)
+        });
+        
+        //string ile sayı aynı ise eşit kabul ediyor ama === kullanılırsa değere ve veri tipine bakar
+        if (2 == 2 && 2 == "2") {
+            console.log("Eşit")
+        }
+
+        let calisan = {
+          isim : "Ahmet Can",
+          soyisim : "Kara",
+          numara : 123,
+          diller : ["c","c++"],
+          adres : {
+              cadde : "kabil",
+              sokak : "123 sokak"
+          },
+          isimBilgileri : function(){
+            return this.isim + this.soyisim + this.numara;
+          }
+        };
+
+        let calisan2 = new Object();
+        calisan2.test = "test123"
+        calisan2.testfunc = function(){
+            return "fonksiyon return etti";
+        }
+        console.log(calisan2.test);
+        console.log(calisan2.testfunc());
+
+        console.log(calisan.isimBilgileri());
+
+        //Yapıcı fonksiyon
+
+        function Calisan(isim, soyisim, numara){
+            this.isim = isim;
+            this.soyisim = soyisim;
+            this.numara = numara;
+        }
+
+        var calisan3 = new Calisan("ahmet","can",123);
+        console.log(calisan3)
+
+
+        //Events
+        function tikla(){
+            console.log("tıklandı");
+        }
+        
+        function tikla2(element){
+            console.log(element)
+            element.innerHTML = "Butona tıklandı"
+            var element = document.getElementById("p1");
+            element.style.color = "green"
+        }
+
+        function mousehover(){
+            var element = document.getElementById("p1")
+            element.style.backgroundColor = "black"
+            element.style.color = "white"
+        }
+
+        function mouseout(){
+            var element = document.getElementById("p1");
+            element.style.backgroundColor = "white"
+            element.style.color = "black"
+        }
+    </script>
+</body>
+</html>
